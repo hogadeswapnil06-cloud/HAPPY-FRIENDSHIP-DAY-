@@ -1,99 +1,71 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Friendship Day 💙</title>
+<title>Happy Friendship Day Madam Ji 💖</title>
 
 <style>
 body{
-margin:0;
-font-family:Arial,sans-serif;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-background:linear-gradient(135deg,#4facfe,#00f2fe);
-color:white;
-text-align:center;
-overflow:hidden;
+    margin:0;
+    padding:20px;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+    text-align:center;
 }
 
-.card{
-background:rgba(255,255,255,0.15);
-padding:30px;
-border-radius:20px;
-backdrop-filter:blur(10px);
-width:85%;
-max-width:420px;
+.container{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
 }
 
-button{
-padding:12px 25px;
-border:none;
-border-radius:25px;
-font-size:18px;
-cursor:pointer;
-background:white;
-color:#2196f3;
-font-weight:bold;
-margin-top:20px;
+h1{
+    color:#e91e63;
 }
 
-#msg{
-display:none;
-margin-top:20px;
-line-height:1.7;
+p{
+    font-size:20px;
+    color:#444;
+    line-height:1.8;
 }
 
-.heart{
-position:absolute;
-font-size:20px;
-animation:float 6s linear infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(100vh);opacity:0;}
-20%{opacity:1;}
-100%{transform:translateY(-120px);opacity:0;}
+img{
+    width:90%;
+    max-width:450px;
+    border-radius:15px;
+    margin-top:20px;
+    box-shadow:0 0 10px rgba(0,0,0,0.3);
 }
 </style>
-
 </head>
+
 <body>
 
-<div class="card">
-<h1>💙 Happy Friendship Day 💙</h1>
+<div class="container">
 
-<p>Someone special deserves a special wish... 😊</p>
+<h1>💖 Happy Friendship Day Madam Ji 💖</h1>
 
-<button onclick="showWish()">Open Surprise ✨</button>
+<p>
+Thank you for being such a wonderful person.<br><br>
 
-<div id="msg">
-Happy Friendship Day! 💙<br><br>
+I hope your life is always filled with happiness,
+beautiful moments, endless smiles, and success.<br><br>
 
-Thank you for being such a wonderful person.<br>
-I hope you always stay happy, keep smiling, and achieve everything you dream of.<br><br>
+May our friendship always stay special.<br><br>
 
-Wishing you a beautiful day filled with happiness and unforgettable memories. 🌸✨🤍
+✨ Wishing you a very Happy Friendship Day! ✨ ❤️
+</p>
+
+<img src="IMG-20260308-WA0001.jpg" alt="Friendship Photo 1">
+
+<img src="IMG-20260511-WA0002.jpg" alt="Friendship Photo 2">
+
 </div>
-
-</div>
-
-<script>
-function showWish(){
-document.getElementById("msg").style.display="block";
-}
-
-for(let i=0;i<30;i++){
-let h=document.createElement("div");
-h.className="heart";
-h.innerHTML="💙";
-h.style.left=Math.random()*100+"vw";
-h.style.animationDuration=(4+Math.random()*5)+"s";
-document.body.appendChild(h);
-}
-</script>
 
 </body>
 </html>
