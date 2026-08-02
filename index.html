@@ -1,5 +1,4 @@
- 
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -70,12 +69,12 @@
         }
         .music-btn {
             margin-top: 20px;
-            padding: 10px 20px;
+            padding: 12px 25px;
             background-color: #ff4757;
             color: white;
             border: none;
             border-radius: 25px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
             transition: background 0.3s;
@@ -165,7 +164,7 @@
         </div>
 
         <!-- Music Play Button -->
-        <button class="music-btn" onclick="toggleMusic()">🎵 Play 'Koodappirannor' / Pause</button>
+        <button class="music-btn" id="playBtn" onclick="toggleMusic()">🎵 Play 'Koodappirannor'</button>
     </div>
 
     <!-- Fullscreen Modal -->
@@ -175,9 +174,9 @@
         <div id="modal-caption"></div>
     </div>
 
-    <!-- Background Music Audio Element ("Koodappirannor" Song) -->
-    <audio id="bg-music" loop>
-        <source src="https://aac.saavncdn.com/106/50125bc4464b1f415cf2bc88d2279b32_160.mp4" type="audio/mp4">
+    <!-- Background Music Audio Element -->
+    <audio id="bg-music" preload="auto" loop>
+        <source src="https://p.scdn.co/mp3-preview/c8378546b509bc662057398b1b3699b8214b7858?cid=257644914d334587a8761cb7e42fb59c" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
@@ -192,18 +191,24 @@
         }
 
         let music = document.getElementById('bg-music');
+        let playBtn = document.getElementById('playBtn');
         let isPlaying = false;
+
         function toggleMusic() {
             if (isPlaying) {
                 music.pause();
+                playBtn.innerText = "🎵 Play 'Koodappirannor'";
                 isPlaying = false;
             } else {
-                music.play();
-                isPlaying = true;
+                music.play().then(() => {
+                    playBtn.innerText = "⏸️ Pause Music";
+                    isPlaying = true;
+                }).catch(error => {
+                    alert("Gaane play karnyasaathi button punha dabha!");
+                });
             }
         }
     </script>
 
 </body>
 </html>
-
