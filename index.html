@@ -1,71 +1,177 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Friendship Day Madam Ji 💖</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Friendship Day Madam Ji 💖</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1 {
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #d1d5db;
+        }
+        .photo-gallery {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .photo-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .photo-card:hover {
+            transform: scale(1.05);
+        }
+        .photo-card img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .photo-caption {
+            margin-top: 8px;
+            font-size: 0.95rem;
+            color: #ffecd2;
+            font-weight: 500;
+            max-width: 180px;
+        }
 
-<style>
-body{
-    margin:0;
-    padding:20px;
-    font-family:Arial,sans-serif;
-    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
-    text-align:center;
-}
+        /* Fullscreen Popup Modal for Clicked Photo */
+        #modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #modal img {
+            max-width: 90%;
+            max-height: 70vh;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(255,255,255,0.3);
+            animation: zoomIn 0.3s ease;
+        }
+        #modal-caption {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: #ffffff;
+            text-align: center;
+            padding: 0 20px;
+        }
+        #modal span {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.5rem;
+            color: #ffffff;
+            cursor: pointer;
+        }
 
-.container{
-    max-width:700px;
-    margin:auto;
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:0 0 15px rgba(0,0,0,0.2);
-}
-
-h1{
-    color:#e91e63;
-}
-
-p{
-    font-size:20px;
-    color:#444;
-    line-height:1.8;
-}
-
-img{
-    width:90%;
-    max-width:450px;
-    border-radius:15px;
-    margin-top:20px;
-    box-shadow:0 0 10px rgba(0,0,0,0.3);
-}
-</style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
+    <script>
+        let pass = prompt("Madam ji, password taka:");
+        if (pass !== "0122") {
+            alert("Chukicha password!");
+            document.body.innerHTML = "<h1 style='color:white; text-align:center; margin-top:40vh;'>Access Denied! ❌</h1>";
+            throw new Error("Access Denied");
+        }
+    </script>
 
-<h1>💖 Happy Friendship Day Madam Ji 💖</h1>
+    <div class="container">
+        <h1>Happy Friendship Day Madam Ji 💖🤝</h1>
+        <p>
+            Thank you for being such a wonderful person.<br><br>
+            I hope your life is always filled with happiness, beautiful moments, endless smiles, and success.<br><br>
+            May our friendship always stay special.<br><br>
+            ✨ Wishing you a very Happy Friendship Day! ✨ ❤️
+        </p>
+        
+        <!-- Photo Gallery with Friendship Captions -->
+        <div class="photo-gallery">
+            <div class="photo-card" onclick="openModal('IMG-20260308-WA0001.jpg', 'May your sweet smile always remain like this, Happy Friendship Day Madam Ji! 💖')">
+                <img src="IMG-20260308-WA0001.jpg" alt="Friendship Photo 1">
+                <div class="photo-caption">May your sweet smile always remain like this, Happy Friendship Day Madam Ji! 💖</div>
+            </div>
+            
+            <div class="photo-card" onclick="openModal('IMG-20260511-WA0002.jpg', 'Thank you for being such an amazing friend and bringing so much joy into my life! 🌸')">
+                <img src="IMG-20260511-WA0002.jpg" alt="Friendship Photo 2">
+                <div class="photo-caption">Thank you for being such an amazing friend and bringing so much joy into my life! 🌸</div>
+            </div>
+        </div>
+    </div>
 
-<p>
-Thank you for being such a wonderful person.<br><br>
+    <!-- Fullscreen Modal -->
+    <div id="modal" onclick="closeModal()">
+        <span onclick="closeModal()">&times;</span>
+        <img id="modal-img" src="" alt="Zoomed Photo">
+        <div id="modal-caption"></div>
+    </div>
 
-I hope your life is always filled with happiness,
-beautiful moments, endless smiles, and success.<br><br>
+    <!-- Cinematic Background Music -->
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-tenderness.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
-May our friendship always stay special.<br><br>
-
-✨ Wishing you a very Happy Friendship Day! ✨ ❤️
-</p>
-
-<img src="IMG-20260308-WA0001.jpg" alt="Friendship Photo 1">
-
-<img src="IMG-20260511-WA0002.jpg" alt="Friendship Photo 2">
-
-</div>
+    <script>
+        function openModal(imgSrc, captionText) {
+            document.getElementById('modal').style.display = 'flex';
+            document.getElementById('modal-img').src = imgSrc;
+            document.getElementById('modal-caption').innerText = captionText;
+        }
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
